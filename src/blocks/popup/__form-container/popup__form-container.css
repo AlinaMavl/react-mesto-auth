@@ -1,0 +1,19 @@
+.popup__form-container {
+  padding-bottom: 30px;
+  width: 358px;
+  position: relative;
+}
+
+.popup__form-container:nth-child(3) {
+  padding-bottom: 48px;
+}
+
+@media (max-width:425px) {
+  .popup__form-container {
+    padding-bottom: 30px;
+    width: 238px;
+  }
+  .popup__form-container:nth-child(3) {
+    padding-bottom: 45px;
+  }
+}

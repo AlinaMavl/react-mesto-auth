@@ -1,0 +1,27 @@
+.popup__close-button {
+  background-image: url(../../../images/крестик.png);
+  background-repeat:no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+}
+
+.popup__close-button:hover {
+  opacity: .6;
+}
+
+@media (max-width:786px) {
+  .popup__close-button {
+    background-size: 20px 20px;
+    top: -35px;
+    right: -11px;
+  }
+}

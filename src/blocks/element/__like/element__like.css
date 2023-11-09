@@ -1,0 +1,17 @@
+.element__like {
+  background-image: url(../../../images/сердце.png);
+  width: 22px;
+  height: 19px;
+  position: relative;
+  right: 7px;
+  flex-shrink: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+}
+
+.element__like:hover {
+  opacity: .5;
+}

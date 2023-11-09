@@ -1,0 +1,26 @@
+.body{
+  background-color: #000;
+  margin: 0 auto;
+  max-width: 880px;
+  padding: 0 200px;
+  font-family: "Inter", Arial, sans-serif;
+  color: #fff;
+}
+
+@media (max-width:1024px) {
+.body {
+  padding: 0 100px;
+}
+} 
+
+@media (max-width:768px) {
+.body {
+  padding: 0 50px;
+}
+}
+
+@media (max-width:425px) {
+.body {
+  padding: 0;
+}
+}

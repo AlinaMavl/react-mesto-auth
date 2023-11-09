@@ -1,0 +1,50 @@
+.profile__add-button {
+  width: 150px;
+  height: 50px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  background-image: url(../../../images/плюс.png);
+  background-size: 22px 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 38.75px;
+  left: 244px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.profile__add-button:hover {
+  opacity: .6;
+}
+
+@media (max-width:1279px) {
+  .profile__add-button {
+    left: 25px;
+    width: 100px;
+  }
+}
+
+@media (max-width:1024px) {
+  .profile__add-button {
+    background-size: 19px 19px;
+    left: 15px;
+    width: 70px;
+  }
+}
+
+@media (max-width:768px) {
+  .profile__add-button {
+    width: 282px;
+    left: 0;
+    top:0;
+  }
+}
+    
+@media (max-width:425px) {
+  .profile__add-button {
+    background-size: 16px 16px;
+  }
+}
