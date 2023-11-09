@@ -161,7 +161,7 @@ function App() {
   const navigate = useNavigate();
 
   const [loggedIn, setLoggedIn] = useState(false);
-  const [email,setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   //REGISTER
 
@@ -171,12 +171,11 @@ function App() {
       .then((res) => {
         setIsTooltipSuccessPopup(true);
         navigate("/sign-in", { replace: true });
-
-    })
-      .catch((err)=>{
+      })
+      .catch((err) => {
         console.log(err);
         setIsTooltipFailPopup(true);
-      })
+      });
   };
 
   //LOGIN
@@ -186,7 +185,7 @@ function App() {
       .authorize(data.email, data.password)
       .then((data) => {
         if (data.jwt) {
-          localStorage.setItem('jwt', data.jwt);
+          localStorage.setItem("jwt", data.jwt);
           setLoggedIn(true);
         }
         navigate("/", { replace: true });
@@ -195,30 +194,33 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
-    //SIGNOUT
+  //SIGNOUT
   const signOut = () => {
     localStorage.removeItem("jwt");
     navigate("/sign-in", { replace: true });
   };
 
   const handleTokenCheck = (jwt) => {
-    if(jwt){
-        auth
-          .checkToken(jwt)
-          .then((data) => {
-            navigate("/", {replace: true});
-            setLoggedIn(true);
-            setEmail(data.data.email);
-        });
-      }}
+    if (jwt) {
+      auth
+        .checkToken(jwt)
+        .then((data) => {
+          navigate("/", { replace: true });
+          setLoggedIn(true);
+          setEmail(data.data.email);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    }
+  };
 
-    useEffect(() => {
-      const jwt = localStorage.getItem("jwt");
-      handleTokenCheck(jwt);
+  useEffect(() => {
+    const jwt = localStorage.getItem("jwt");
+    handleTokenCheck(jwt);
   }, []);
-
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -231,7 +233,7 @@ function App() {
                 email={email}
                 headerSignOut={"Выйти"}
                 onClick={signOut}
-                path={'/sign-in'}
+                path={"/sign-in"}
               />
               <ProtectedRouteElement
                 element={Main}
@@ -252,7 +254,10 @@ function App() {
           element={
             <>
               <Header headerLink={"Вход"} path="/sign-in" />
-              <Register onSignSubmit={handleRegisterSubmit} loggedIn={loggedIn} />
+              <Register
+                onSignSubmit={handleRegisterSubmit}
+                loggedIn={loggedIn}
+              />
             </>
           }
         />
@@ -261,10 +266,7 @@ function App() {
           element={
             <>
               <Header headerLink={"Регистрация"} path="/sign-up" />
-              <Login
-                onSignSubmit={handleLoginSubmit}
-                loggedIn={loggedIn}
-                />
+              <Login onSignSubmit={handleLoginSubmit} loggedIn={loggedIn} />
             </>
           }
         />
